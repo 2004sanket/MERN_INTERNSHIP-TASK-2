@@ -1,0 +1,82 @@
+.sidebar {
+  width: 240px;
+  background-color: #fafafa;
+  height: 100vh;
+  border-right: 1px solid #e0e0e0;
+  display: flex;
+  flex-direction: column;
+  transition: width 0.3s ease;
+  position: sticky;
+  top: 0;
+}
+
+.profileSection {
+  display: flex;
+  align-items: center;
+  padding: 20px 15px;
+  gap: 12px;
+}
+
+.userImage {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: #11510d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 600;
+}
+
+.addButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 10px 15px;
+  padding: 10px;
+  background: none;
+  color: #e65e52;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  border-radius: 8px;
+}
+
+.addButton:hover {
+  background-color: #fee2e2;
+}
+
+.navList {
+  list-style: none;
+  padding: 0;
+}
+
+.navItem, .activeLink {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 20px;
+  color: #444;
+  font-size: 14px;
+}
+
+.activeLink {
+  background-color: #ffefee;
+  color: #e65e52;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 60px;
+  }
+  .userName, .addButton span, .navItem span, .activeLink span {
+    display: none;
+  }
+  .profileSection, .addButton, .navItem, .activeLink {
+    justify-content: center;
+    padding: 15px 0;
+  }
+}

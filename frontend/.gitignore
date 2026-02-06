@@ -1,0 +1,22 @@
+# Dependencies (Massive folders created by npm install)
+node_modules/
+
+# Production (The folder created when you run 'npm run build')
+dist/
+
+# Environment Secrets (Where you keep API keys and Backend URLs)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Logs (Error records from npm/yarn)
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Editor Specific (Local settings for VS Code or IntelliJ)
+.vscode/
+.idea/
+.DS_Store

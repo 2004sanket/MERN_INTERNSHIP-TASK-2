@@ -1,0 +1,16 @@
+.app-layout {
+  display: flex;
+  width: 100%;
+}
+
+.content-area {
+  flex: 1;
+  padding: 20px; /* This is adding to the 2rem in your container */
+  overflow-y: auto;
+}
+
+@media (max-width: 480px) {
+  .content-area {
+    padding: 10px;
+  }
+}

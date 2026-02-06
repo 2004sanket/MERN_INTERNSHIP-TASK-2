@@ -1,0 +1,249 @@
+/* Container & General Layout */
+.tasksContainer {
+
+  /* Change from 1000px to 100% to ensure it never exceeds its parent */
+  width: 100%; 
+  max-width: 100%; 
+  
+  /* Ensure padding is subtracted from the width, not added to it */
+  box-sizing: border-box; 
+  
+  margin: 0; 
+  padding: 1.5rem; /* Reduced padding slightly to save horizontal space */
+  font-family: 'Inter', -apple-system, sans-serif;
+  overflow-x: hidden; /* Safety net to prevent any horizontal overflow */
+}
+
+.tasksTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  /* Reset default h2 margin and use only margin-bottom */
+  margin: 0; 
+  margin-bottom: 2rem;
+  padding-top: 1rem; /* Control the exact gap you want here */
+  color: #1e293b;
+  text-align: left;
+}
+
+.tasksList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+/* Task Card Styling */
+.taskCard {
+  padding: 1.5rem;
+  background-color: (255, 255, 255, 0.7);
+  border-radius: 12px;
+  border: 2px solid #f1f5f9;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.taskCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.taskHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.taskHeader h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #0f172a;
+  font-weight: 600;
+}
+
+.taskBtnDeleted {
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  cursor: pointer;
+  transition: color 0.2s;
+  padding: 5px;
+  border-radius: 6px;
+}
+
+.taskBtnDeleted:hover {
+  color: #ef4444;
+  background-color: #fef2f2;
+}
+
+.taskCard p {
+  color: #453a38;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.taskCard small {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 4px 10px;
+  color: #475569; /* Slate gray text */
+  font-weight: 600;
+  font-size: 0.8rem;
+  
+}
+
+/* Floating Action Button (FAB) */
+.fab {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: none;
+  background: #4f46e5;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(79, 70, 229, 0.4);
+  transition: all 0.2s;
+  z-index: 998;
+}
+
+.fab:hover {
+  transform: scale(1.1) rotate(90deg);
+  background: #4338ca;
+}
+
+/* --- Modal & Form Styling (Corrected) --- */
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(15, 23, 42, 0.6); /* Darker backdrop */
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* Always on top */
+  padding: 20px;
+}
+
+.modal {
+  background: white;
+  padding: 2rem;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 450px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  animation: modalPop 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes modalPop {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.modalHeader h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0;
+}
+
+.closeBtn {
+  background: #f1f5f9;
+  border: none;
+  padding: 6px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #64748b;
+  display: flex;
+}
+
+.modalForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.modalForm label {
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: #334155;
+  margin-bottom: -0.75rem; /* Groups label with input */
+}
+
+.modalForm input,
+.modalForm textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+  box-sizing: border-box; /* Fixes the overflow issue */
+  transition: all 0.2s;
+}
+
+.modalForm input:focus,
+.modalForm textarea:focus {
+  outline: none;
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+.modalForm textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.submitBtn {
+  background: #4f46e5;
+  color: white;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-top: 0.5rem;
+}
+
+.submitBtn:hover {
+  background: #4338ca;
+}
+
+/* Mobile Responsive Breakpoints */
+@media (max-width: 640px) {
+  .tasksContainer {
+    padding: 1rem;
+  }
+  
+  .tasksTitle {
+    font-size: 1.5rem;
+  }
+
+  .modal {
+    padding: 1.5rem;
+  }
+  
+  .fab {
+    bottom: 20px;
+    right: 20px;
+  }
+}

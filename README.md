@@ -1,95 +1,54 @@
-MERN To-Do List Application (Maincrafts Task 2)
+MERN Stack To-Do App 🚀
 
-This repository contains a MERN-stack To-Do List application developed for the Maincrafts Technology MERN Stack Internship. It demonstrates how to build a functional CRUD application where the frontend (React) communicates with a backend (Express/Node.js) and a cloud database (MongoDB Atlas).
+This is my Task 3 project for the Maincrafts Technology Internship. I built a full-stack To-Do application where you can manage your daily tasks. It uses React for the UI and connects to a MongoDB database to save everything.
 
-🚀 Features
+🌟 Key Features
 
-1.Task Management: Add new tasks via a custom modal and view them in a real-time list.
-2.Modern UI: Built with a modular component structure including a Sidebar and Task Modals.
-3.Persistent Storage: Integrated with MongoDB Atlas for cloud-based data management.
-4.Environment Security: Uses dedicated environment variables to protect sensitive API keys.
-
-
+Add Tasks: Click the plus button to add a new task.
+View Tasks: All tasks are listed in cards with their titles and deadlines.
+Edit Tasks: Click the Pencil icon to update a task's details.
+Delete Tasks: Click the Trash icon to remove a task.
+Cloud Storage: All data is stored in MongoDB Atlas.
 
 🛠️ Tech Stack
 
-1.Frontend: React (Vite), axios (API requests), lucide-react (Icons), react-router-dom (Navigation), CSS Modules.
-
-2.Backend: Node.js, Express, mongoose (Database modeling), cors (Cross-origin sharing), dotenv (Environment config).
-
-3.Database: MongoDB Atlas.
-
-
+Frontend: React (Vite), Axios, Lucide-React.
+Backend: Node.js, Express.
+Database: MongoDB Atlas using Mongoose.
 
 📂 Project Structure
 
-Based on the current development environment:
+My project is divided into two main folders:
 
 Backend
 
-models/: Mongoose schemas for task data.
-server.js: Main entry point for the Express API.
- .env: Configuration for sensitive credentials (not tracked by Git).
+ server.js: The main entry point for the API.
+ models/Task.js: Defines how the task data is stored in the database.
+ .env: Stores my private MongoDB connection string.
 
-Frontend
+ Frontend
 
-src/Add-Task/: Contains addTask.jsx and TaskModal.jsx.
-src/Sidebar.jsx: Navigation and layout component. 
-App.jsx & main.jsx: Core React logic and routing.
+ src/Add-Task/: Contains addTask.jsx, TaskModal.jsx, and addTask.module.css.
+ src/Sidebar.jsx: The navigation sidebar component.
+ App.jsx: Handles the main layout and routing.
 
+ 🔧 Installation & Setup
 
+ 1. Backend Setup
 
-🔧 Installation and Setup
-1. Clone the Repository
+1. Open your terminal and go to the backend: cd backend
+2. Install packages: npm install
+3. Create a .env file and add your MONGO_URI.
+4. Start the server: node server.js
 
+ 2. Frontend Setup
 
-2. Database Setup (MongoDB Atlas)
-
-1. Log in to [MongoDB Atlas](https://www.mongodb.com/cloud/atlas).
-2. Create a cluster and a database named todoDB.
-3. Whitelist your IP address in Network Access.
-4. Create a Database User and copy your Connection String.
-
-
-3. Backend Configuration
-
-1. Navigate to the backend folder:
-
-cd backend
-npm install
+1. Open a new terminal and go to the frontend: cd frontend
+2. Install packages: npm install
+3. Start the app: npm run dev
+4. Open http://localhost:5173 in your browser.
 
 
-2. Create a .env file in the backend directory:
+💡 What I Learned
 
-PORT=5000
-MONGO_URI=your_mongodb_connection_string_here
-
-
-
-
-3. Start the server:
-
-node server.js
-
-
-
-4. Frontend Configuration
-
-1. Navigate to the frontend folder:
-
-cd ../frontend
-npm install
-
-
-
-2. Start the development server:
-
-npm run dev
-
-The app will typically run on http://localhost:5173 (Vite default).
-
-
-
-🛡️ Important Note on Security
-
-The .env file in the backend contains your private database credentials. It is already included in the .gitignore to ensure it is not uploaded to GitHub. When cloning this repo, you must create your own .env file as described in the setup steps above.
+During this project, I learned how to handle full CRUD operations (Create, Read, Update, Delete). I also learned how to fix common errors like 404 Not Found by adding proper backend routes and how to format dates correctly for HTML inputs.

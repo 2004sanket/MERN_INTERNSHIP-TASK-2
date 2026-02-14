@@ -247,3 +247,14 @@
     right: 20px;
   }
 }
+.editBtn, .deleteBtn {
+  
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  color: #666;
+}
+
+.editBtn:hover { color: #2563eb; }
+.deleteBtn:hover { color: #dc2626; }
